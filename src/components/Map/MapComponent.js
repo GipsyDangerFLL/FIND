@@ -4,13 +4,22 @@ import CustomMarker from './CustomMarker';
 import MarkerPopup from './MarkerPopup';
 
 const MapComponent = ({ species, selectedSpecies, onSpeciesSelect }) => {
+  // Coordenadas aproximadas do centro do Brasil (próximo a Brasília)
+  const brasilCenter = [-15.77972, -47.92972];
+  const initialZoom = 4; // Zoom adequado para mostrar todo o Brasil
+
   return (
     <MapContainer
-     center={[-2.5297, -44.3024]}
-     zoom={11}
-     className="h-[500px] w-full" 
-     zoomControl={false}
-     style={{ background: '#e5f2f9' }}
+      center={brasilCenter}
+      zoom={initialZoom}
+      className="h-[500px] w-full"
+      zoomControl={false}
+      style={{ background: '#e5f2f9' }}
+      minZoom={3} // Evita zoom out excessivo
+      maxBounds={[
+        [-35.0, -75.0], // Canto sudoeste
+        [5.0, -30.0]    // Canto nordeste
+      ]} // Limita o pan para manter o foco no Brasil
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
