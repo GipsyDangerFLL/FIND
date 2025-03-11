@@ -151,7 +151,7 @@ export const speciesData = [
     location: { lat: -22.90685, lng: -42.01370 },
     regionName: "Região dos Lagos",
     isVenomous: false,
-    imagePath: "/images/fishs/gapio.jpg",
+    imagePath: "/images/fishs/gapio.jpeg",
     healthUnitsMap: "/images/backgrounds/saúde.png",
     description: "Afeta populações nativas devido à introdução e sobrepesca.",
     detailedInfo: {
